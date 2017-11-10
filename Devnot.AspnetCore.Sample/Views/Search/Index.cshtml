@@ -1,0 +1,23 @@
+﻿@{
+  ViewBag.Title = "title";
+  Layout = "_Layout";
+}
+<h2>İçerik Arama</h2>
+<input class="searchText" type="text" />
+<button class="btnSearch" type="button">Ara</button>
+<h1 class="provider"></h1>
+<div class="result"></div>
+@section Scripts
+    {
+    <script>
+
+        $(".btnSearch").click(function () {
+            $(".result").html("Bekleyiniz");
+            $.post("/search/SearchContent", { term: $(".searchText").val() }, function (data) {
+                $(".provider").html("Provider:" + data.provider);
+                $(".result").html(JSON.stringify(data));
+            });
+        });
+
+    </script>
+}

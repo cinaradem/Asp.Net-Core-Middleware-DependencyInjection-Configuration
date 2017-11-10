@@ -1,0 +1,28 @@
+﻿@using Devnot.AspnetCore.Sample.Domain.Options
+@using Microsoft.Extensions.Options
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+ 
+
+<div class="row">
+    <h2>Life Times</h2>
+    
+    <div class="col-md-10">
+        <h2>Controller Operations</h2>
+        <ul>
+            <li><b>Transient:</b> @ViewBag.Transient.OperationId</li>
+            <li><b>Scoped:</b> @ViewBag.Scoped.OperationId</li>
+            <li><b>Singleton:</b> @ViewBag.Singleton.OperationId</li>
+        </ul>
+    </div>
+    <div class="col-md-10">
+        <h2>OperationService Operations</h2>
+        <ul>
+            <li><b>Transient:</b> @ViewBag.Service.TransientOperation.OperationId</li>
+            <li><b>Scoped:</b> @ViewBag.Service.ScopedOperation.OperationId</li>
+            <li><b>Singleton:</b> @ViewBag.Service.SingletonOperation.OperationId</li>
+        </ul>
+    </div>
+</div>
